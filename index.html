@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background color</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="bcode">
+
+    <div id="centerdiv">
+        <h1>website color generator</h1>
+        <br> <br>
+        <h2>pick the color</h2>
+        <br> <br>
+        <input type="color" name="" id="colorone" value="#657a99">
+        <input type="color" name="" id="colortwo" value="">
+        <br> <br>
+        <h3 id="showvalue"></h3>
+    </div>
+
+    <script>
+        const colorone = document.getElementById('colorone');
+        const colortwo = document.getElementById('colortwo');
+        const bcode = document.getElementById('bcode');
+
+        const showdata = document.getElementById('showvalue');
+
+        function bgcolor() {
+            bcode.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+
+            showdata.textContent = "copy your code : " + `linear-gradient(to right,${colorone.value}, ${colortwo.value})`;
+
+        }
+
+        colorone.addEventListener('input', bgcolor);
+        colortwo.addEventListener('input', bgcolor);
+    </script>
+</body>
+
+</html>
